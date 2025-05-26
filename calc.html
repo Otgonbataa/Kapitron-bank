@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зээлийн тооцоолуур</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #003c8f;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .results {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    .results p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Тэнцүү төлөлт Тооцоолуур</h2>
+    <div class="input-group">
+      <label>Зээлийн хэмжээ (Төгрөг):</label>
+      <input type="number" id="amount" value="96100000">
+    </div>
+    <div class="input-group">
+      <label>Жилийн хүүг (хувь):</label>
+      <input type="number" id="interest" value="12">
+    </div>
+    <div class="input-group">
+      <label>Зээлийн хугацаа (сараар):</label>
+      <input type="number" id="months" value="12">
+    </div>
+    <div class="results">
+      <p>Сар бүр төлөх төлбөр: <span id="monthly"></span> ₮</p>
+      <p>Нийт төлөх дүн: <span id="total"></span> ₮</p>
+    </div>
+  </div>  <script>
+    function calculateLoan() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
+      const months = parseInt(document.getElementById('months').value);
+
+      const monthly = (amount * interest) / (1 - Math.pow(1 + interest, -months));
+      const total = monthly * months;
+
+      document.getElementById('monthly').textContent = monthly.toLocaleString('mn-MN', {maximumFractionDigits: 0});
+      document.getElementById('total').textContent = total.toLocaleString('mn-MN', {maximumFractionDigits: 0});
+    }
+
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', calculateLoan);
+    });
+
+    calculateLoan();
+  </script></body>
+</html>

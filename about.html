@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нүүр хуудас</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow sticky top-0 z-50" ></header>
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="/images/logo.svg" alt="logo" class="h-10 w-auto">
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#" class="flex items-center space-x-2 hover:text-blue-700 font-medium">
+                    <img src="/images/user.png" alt="" class="w-6 h-6 border rounded-full p-1">
+                    <span>Иргэд</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2 text-gray-500 hover:text-blue-700 font-medium">
+                    <img src="/images/work.png" alt="" class="w-6 h-6 border rounded-full p-1">
+                    <span>Байгууллага</span>
+                </a>
+                <a href="#" class="hover:text-blue-700">Бидний тухай</a>
+                <a href="#" class="hover:text-blue-700">Салбар нэгж</a>
+                <a href="#" class="hover:text-blue-700">Шилэн данс</a>
+            </nav>
+            <!-- Search & Lang -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Хайх" class="pl-8 pr-3 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm">
+                    <img src="/images/search.png" alt="search" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-60">
+                </div>
+                <div class="flex items-center space-x-2">
+                    <img src="/images/usa.png" alt="usa" class="w-7 h-7 border rounded">
+                    <img src="/images/mon.png" alt="mon" class="w-7 h-7 border rounded">
+                </div>
+                <a href="#" class="ml-4 flex items-center gap-2 border border-blue-700 rounded-full py-1 px-4 font-bold text-blue-700 hover:bg-blue-50 transition">
+                    <img src="/images/com.png" alt="" class="w-4">
+                    <span>Дижитал банк</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden flex items-center px-2 py-1 rounded hover:bg-gray-100 focus:outline-none">
+                <img src="/images/menu.svg" alt="menu" class="w-6 h-6">
+            </button>
+        </div>
+        <!-- Mobile Nav -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <ul class="flex flex-col px-4 py-2 space-y-2">
+                <li><a href="#" class="flex items-center space-x-2 py-2 hover:text-blue-700"><img src="/images/user.png" class="w-5 h-5 border rounded-full p-1"> <span>Иргэд</span></a></li>
+                <li><a href="#" class="flex items-center space-x-2 py-2 hover:text-blue-700"><img src="/images/work.png" class="w-5 h-5 border rounded-full p-1"> <span>Байгууллага</span></a></li>
+                <li><a href="#" class="py-2 hover:text-blue-700">Бидний тухай</a></li>
+                <li><a href="#" class="py-2 hover:text-blue-700">Салбар нэгж</a></li>
+                <li><a href="#" class="py-2 hover:text-blue-700">Шилэн данс</a></li>
+                <li class="flex items-center space-x-2 py-2">
+                    <img src="/images/usa.png" alt="usa" class="w-7 h-7 border rounded">
+                    <img src="/images/mon.png" alt="mon" class="w-7 h-7 border rounded">
+                </li>
+                <li>
+                    <a href="#" class="flex items-center gap-2 border border-blue-700 rounded-full py-2 px-4 font-bold text-blue-700 hover:bg-blue-50 transition">
+                        <img src="/images/com.png" alt="" class="w-4">
+                        <span>Дижитал банк</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4">
+        <!-- Slider -->
+        <section id="slider" class="relative overflow-hidden rounded-lg mt-6 shadow">
+            <div class="slider-images relative h-56 sm:h-80 lg:h-[420px]">
+                <img src="/images/slide1.jpg" alt="slide1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700 rounded-lg">
+                <img src="/images/slide2.jpg" alt="slide2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 rounded-lg">
+                <img src="/images/slide3.jpg" alt="slide3" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 rounded-lg">
+            </div>
+            <button id="prevSlide" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 shadow rounded-full p-2 text-xl">&lt;</button>
+            <button id="nextSlide" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 shadow rounded-full p-2 text-xl">&gt;</button>
+        </section>
+
+        <!-- Category -->
+        <section class="flex flex-col items-center justify-center bg-white rounded-lg shadow mt-8 py-4">
+            <ul class="flex flex-wrap justify-center gap-2 w-full">
+                <li><a href="#" class="block px-5 py-2 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">Мэдээ мэдээлэл</a></li>
+                <li><a href="#" class="block px-5 py-2 rounded-full text-gray-700 hover:bg-blue-50 transition">Хадгаламж</a></li>
+                <li><a href="#" class="block px-5 py-2 rounded-full text-gray-700 hover:bg-blue-50 transition">Зээл</a></li>
+                <li><a href="#" class="block px-5 py-2 rounded-full text-gray-700 hover:bg-blue-50 transition">Карт</a></li>
+                <li><a href="#" class="block px-5 py-2 rounded-full text-gray-700 hover:bg-blue-50 transition">Дижитал банк</a></li>
+            </ul>
+        </section>
+
+        <!-- Cards -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4">
+                <img src="/images/card1.jpg" alt="card1" class="h-40 w-full object-cover rounded mb-2">
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4">
+                <img src="/images/card2.jpg" alt="card2" class="h-40 w-full object-cover rounded mb-2">
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4">
+                <img src="/images/card3.jpg" alt="card3" class="h-40 w-full object-cover rounded mb-2">
+            </div>
+        </section>
+
+        <!-- Currency Exchange -->
+        <section class="bg-white rounded-lg shadow mt-10 p-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-4">
+                <h1 class="text-red-600 text-xl font-bold">Валютын ханш</h1>
+                <a href="#" class="flex items-center text-blue-600 hover:underline text-sm mt-2 sm:mt-0">Дэлгэрэнгүй <img src="/images/arrowr.png" alt="arrow-right" class="ml-1 w-4 h-4"></a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="flex items-center bg-gray-50 rounded-lg shadow p-4 space-x-4">
+                    <img src="/images/usa.png" alt="usa" class="w-10 h-10 rounded">
+                    <span class="font-semibold">USD</span>
+                    <div class="flex flex-col text-xs">
+                        <span class="font-bold">3566.0</span>
+                        <span class="text-gray-500">Авах</span>
+                    </div>
+                    <div class="flex flex-col text-xs ml-4">
+                        <span class="font-bold">3592.0</span>
+                        <span class="text-gray-500">Зарах</span>
+                    </div>
+                </div>
+                <div class="flex items-center bg-gray-50 rounded-lg shadow p-4 space-x-4">
+                    <img src="/images/cny.png" alt="cny" class="w-10 h-10 rounded">
+                    <span class="font-semibold">CNY</span>
+                    <div class="flex flex-col text-xs">
+                        <span class="font-bold">492.9</span>
+                        <span class="text-gray-500">Авах</span>
+                    </div>
+                    <div class="flex flex-col text-xs ml-4">
+                        <span class="font-bold">499.5</span>
+                        <span class="text-gray-500">Зарах</span>
+                    </div>
+                </div>
+                <div class="flex items-center bg-gray-50 rounded-lg shadow p-4 space-x-4">
+                    <img src="/images/krw.png" alt="krw" class="w-10 h-10 rounded">
+                    <span class="font-semibold">KRW</span>
+                    <div class="flex flex-col text-xs">
+                        <span class="font-bold">2.44</span>
+                        <span class="text-gray-500">Авах</span>
+                    </div>
+                    <div class="flex flex-col text-xs ml-4">
+                        <span class="font-bold">6.67</span>
+                        <span class="text-gray-500">Зарах</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Product -->
+        <section class="bg-white rounded-lg shadow mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 p-6 items-center">
+            <div class="flex flex-col items-center">
+                <img src="/images/card3.jpg" alt="card3" class="h-48 w-full object-cover rounded mb-4">
+                <div class="flex justify-center items-center gap-2 mt-2">
+                    <button><img src="/images/backto.png" alt="arrow-left" class="w-8 h-8"></button>
+                    <button><img src="/images/nextto.png" alt="arrow-right" class="w-8 h-8"></button>
+                </div>
+            </div>
+            <div>
+                <h1 class="text-blue-800 text-2xl font-bold mb-4">Онцлох бүтээгдэхүүн үйлчилгээ</h1>
+                <ul class="flex flex-wrap gap-2 mb-4">
+                    <li><a href="#" class="border py-1 px-4 rounded-full bg-gray-700 text-white font-semibold">Just move</a></li>
+                    <li><a href="#" class="border py-1 px-4 rounded-full text-gray-700 hover:bg-blue-50">Дебит карт</a></li>
+                    <li><a href="#" class="border py-1 px-4 rounded-full text-gray-700 hover:bg-blue-50">Олон улсын карт</a></li>
+                    <li><a href="#" class="border py-1 px-4 rounded-full text-gray-700 hover:bg-blue-50">Кредит карт</a></li>
+                </ul>
+                <p class="text-gray-700 mb-6 text-sm leading-relaxed">
+                    Та Капитрон банкны JUST MOVE Виза картын эзэмшигч болсноор дэлхийн 210 гаруй улсын банк болон түүний салбар тооцооны төвүүд, худалдаа үйлчилгээний байгууллагуудаар 24 цагийн турш үйлчлүүлэх боломжтойгоос гадна хамтрагч байгууллагуудын буцаан олголтын хөтөлбөрт оролцох, гүйлгээний тооноос хамаарсан дата бонус (урьдчилсан болон хосолсон багцын хэрэглэгчид) үйлчилгээ авах, мөн гэнэтийн ослын даатгалд хамрагдах болно.
+                </p>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">Дэлгэрэнгүй</button>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section class="flex flex-col sm:flex-row justify-center items-center bg-white rounded-lg shadow mt-10 p-6 gap-4">
+            <a href="#" class="bg-blue-800 py-2 px-8 rounded text-white font-semibold shadow hover:bg-blue-900 transition">Зээлийн тооцоолуур</a>
+            <a href="#" class="bg-gray-100 py-2 px-8 rounded text-gray-700 font-semibold shadow hover:bg-blue-50 transition">Хадгаламжийн тооцоолуур</a>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Slider
+        const images = document.querySelectorAll('#slider .slider-images img');
+        let current = 0;
+        function showSlide(idx) {
+            images.forEach((img, i) => {
+                img.style.opacity = i === idx ? '1' : '0';
+            });
+        }
+        function nextSlide() {
+            current = (current + 1) % images.length;
+            showSlide(current);
+        }
+        function prevSlide() {
+            current = (current - 1 + images.length) % images.length;
+            showSlide(current);
+        }
+        document.getElementById('nextSlide').onclick = nextSlide;
+        document.getElementById('prevSlide').onclick = prevSlide;
+        setInterval(nextSlide, 3500);
+        showSlide(current);
+
+        // Mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
